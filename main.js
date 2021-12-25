@@ -9,12 +9,11 @@ const main = () => {
     printHelp();
   }
   if (args.c) {
-    saveKeyValue("city", args.s);
+    saveKeyValue("city", args.c);
   }
   if (args.t) {
     saveKeyValue("token", args.t);
   }
-  // print weather
 };
 
 main();
