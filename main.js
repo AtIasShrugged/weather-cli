@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { getArgs } from "./helpers/args.js";
+import { saveToken } from "./helpers/data-handlers.js";
 import { printHelp } from "./services/log.service.js";
 import { saveKeyValue } from "./services/storage.service.js";
 
@@ -9,10 +10,10 @@ const main = () => {
     printHelp();
   }
   if (args.c) {
-    saveKeyValue("city", args.c);
+    // return saveCity(args.c);
   }
   if (args.t) {
-    saveKeyValue("token", args.t);
+    return saveToken(args.t);
   }
 };
 
