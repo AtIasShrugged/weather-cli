@@ -2,9 +2,13 @@
   "name": "weather-cli",
   "version": "1.0.0",
   "description": "CLI for getting weather status",
-  "main": "index.js",
+  "main": "main.js",
+  "bin": {
+    "weather": "main.js"
+  },
+  "type": "module",
   "scripts": {
-    "start": "node index.js",
+    "start": "node main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -12,5 +16,8 @@
     "weather"
   ],
   "author": "Atlas",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.24.0"
+  }
 }
