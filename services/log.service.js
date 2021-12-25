@@ -13,7 +13,7 @@ const printHelp = () => {
   console.log(
     dedent`${chalk.bgCyan(" HELP ")}
 	 ${chalk.green.bold("w/o params")} to print weather for the selected city
-	 ${chalk.yellow.bold("-s [CITY]")} to set up the city
+	 ${chalk.yellow.bold("-c [CITY]")} to set up the city
 	 ${chalk.magenta.bold("-t [API_KEY]")} to set up the token
 	 ${chalk.cyan.bold("-h")} to output the help
 `
