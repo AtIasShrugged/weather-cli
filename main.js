@@ -6,8 +6,7 @@ import { printHelp } from "./services/log.service.js";
 const main = () => {
   const args = getArgs(process.argv);
   if (args.h) {
-    printHelp();
-    return;
+    return printHelp();
   }
   if (args.c) {
     return saveCity(args.c);
@@ -15,7 +14,7 @@ const main = () => {
   if (args.t) {
     return saveToken(args.t);
   }
-  getForcast();
+  return getForcast();
 };
 
 main();

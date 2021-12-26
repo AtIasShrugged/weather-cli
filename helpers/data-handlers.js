@@ -1,5 +1,9 @@
-import { getWeather } from "../services/api.service.js";
-import { printError, printSuccess } from "../services/log.service.js";
+import { getWeather, getWeatherIcon } from "../services/api.service.js";
+import {
+  printError,
+  printSuccess,
+  printWeather,
+} from "../services/log.service.js";
 import { getKeyValue, saveKeyValue } from "../services/storage.service.js";
 
 const saveToken = async (token) => {
@@ -36,12 +40,7 @@ const getForcast = async () => {
       );
     }
     const weather = await getWeather(city);
-    printSuccess(`
-    ${weather.name}: ${weather.weather[0].description}
-    ${Math.round(weather.main.temp)}°C - чувствуется как ${Math.round(
-      weather.main.feels_like
-    )}°C
-    `);
+    printWeather(weather, getWeatherIcon(weather.weather[0].icon));
   } catch (e) {
     if (e?.response?.status == 404) {
       printError("Некорректный город");
