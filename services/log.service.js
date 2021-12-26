@@ -2,20 +2,24 @@ import chalk from "chalk";
 import dedent from "dedent-js";
 
 const printError = (err) => {
-  console.log(`${chalk.bgRed.whiteBright(" Error ")} ${err}`);
+  console.log(`
+  ${chalk.bgRed.whiteBright(" Ошибка ")} ${err}
+  `);
 };
 
 const printSuccess = (msg) => {
-  console.log(`${chalk.bgGreen.whiteBright(" Success ")} ${msg}`);
+  console.log(`
+  ${chalk.bgGreen.whiteBright(" Успех ")} ${msg}
+  `);
 };
 
 const printHelp = () => {
   console.log(
     dedent`${chalk.bgCyan(" HELP ")}
-	 ${chalk.green.bold("w/o params")} to print weather for the selected city
-	 ${chalk.yellow.bold("-c [CITY]")} to set up the city
-	 ${chalk.magenta.bold("-t [API_KEY]")} to set up the token
-	 ${chalk.cyan.bold("-h")} to output the help
+	 ${chalk.green.bold("w/o params")} чтобы вывести погоду выбранного города
+	 ${chalk.yellow.bold("-c [CITY]")} чтобы установить город
+	 ${chalk.magenta.bold("-t [API_KEY]")} чтобы установить токен
+	 ${chalk.cyan.bold("-h")} чтобы вывести help
 `
   );
 };
