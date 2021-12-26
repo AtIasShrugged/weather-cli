@@ -12,7 +12,7 @@ const saveKeyValue = async (key, value) => {
 
 const getKeyValue = async (key) => {
   const data = await getData();
-  if (data) {
+  if (data[key]) {
     return data[key];
   }
   return undefined;
@@ -22,7 +22,9 @@ const getData = async () => {
   let data = {};
   if (await isExist(filePath)) {
     const file = await promises.readFile(filePath);
-    data = JSON.parse(file);
+    if (file.toString().length) {
+      data = JSON.parse(file);
+    }
   }
   return data;
 };
